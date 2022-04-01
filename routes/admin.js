@@ -23,10 +23,12 @@ router.get(
   async (req, res) => {
     try {
       const { start_Date, end_Date } = req.body;
+      console.log("start_Date", setDate(start_Date, "12.00 AM"));
+      console.log("end_Date", setDate(end_Date, "12.00 PM"));
       const getAllUsers = await User.find({
         createdAt: {
           $gte: setDate(start_Date, "12.00 AM"),
-          $lte: setDate(end_Date, "12.00 PM"),
+          $lte: setDate(end_Date, "11.00 PM"),
         },
       }).select("-password");
       return res.status(200).send({ error: false, user: getAllUsers });
