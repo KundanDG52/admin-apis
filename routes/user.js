@@ -85,7 +85,7 @@ router.post("/", async (req, res) => {
   const newUser = new User({
     name: name.trim(),
     address: address.trim(),
-    customer_photo: "http://localhost:8080/user/image/" + profile_picture,
+    customer_photo: "https://axs-assignment.herokuapp.com/" + profile_picture,
     mobile_number: mobile_number.trim(),
     email_id: email_id.trim(),
     password: hash,
