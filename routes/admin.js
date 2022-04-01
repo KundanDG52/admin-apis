@@ -24,7 +24,7 @@ router.get(
     try {
       const { start_Date, end_Date } = req.body;
       console.log("start_Date", setDate(start_Date, "12.01 AM"));
-      console.log("end_Date", setDate(end_Date, "12.00 AM"));
+      console.log("end_Date", setDate(end_Date, "11.59 PM"));
       const getAllUsers = await User.find({
         createdAt: {
           $gte: setDate(start_Date, "12.00 AM"),
